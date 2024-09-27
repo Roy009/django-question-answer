@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome Home{% endblock %}
+
+{% block content %}
+    <h1>Welcome to Our Website</h1>
+    <p>This is the home page of our website.</p>
+    <p>You can customize this page with more content or features based on your requirements.</p>
+    <p>For example, you can add links to various sections of your website, display featured products, or show recent updates.</p>
+    <p>Feel free to edit this template to match your design and functionality needs.</p>
+    
+    <!-- Add a link to redirect to the product page -->
+    <a href="{% url 'product_detail' product_id=1 %}">View Product</a>
+{% endblock %}

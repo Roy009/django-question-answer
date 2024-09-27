@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My E-commerce Site{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <!-- Header content goes here -->
+        <h1>My E-commerce Site</h1>
+    </header>
+    
+    <nav>
+        <!-- Navigation links go here -->
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <!-- Main content goes here -->
+        {% block content %}
+        
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <!-- Footer content goes here -->
+        <p>&copy; 2024 My E-commerce Site. All rights reserved.</p>
+    </footer>
+</body>
+</html>

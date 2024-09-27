@@ -1,0 +1,28 @@
+    {% extends 'base.html' %}
+    {% block content %}
+    <h1>{{ product.title }}</h1>
+    <p>Description: {{ product.description }}</p>
+    <p>Price: {{ product.price }}</p>
+    <p>Category: {{ product.category }}</p>
+    <img src="{{ product.image.url }}" alt="{{ product.title }}">
+
+    <!-- Form for submitting reviews -->
+    <h2>Add a Review</h2>
+    <form method="post" action="{% url 'submit_review' product_id=product.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit Review</button>
+    </form>
+
+    <!-- Display existing reviews -->
+    <h2>Product Reviews</h2>
+    {% for review in product.review_set.all %}
+        <div>
+            <p>Content: {{ review.content }}</p>
+            <p>Rating: {{ review.rating }}</p>
+            <p>Author: {{ review.author }}</p>
+        </div>
+    {% empty %}
+        <p>No reviews yet.</p>
+    {% endfor %}
+    {% endblock %}

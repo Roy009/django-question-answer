@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+    <h2>Register</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ profile_form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+    {% if registered %}
+        <p>Thank you for registering!</p>
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>  <!-- Add login button -->
+    {% else %}
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>  <!-- Add login button -->
+    {% endif %}
+</body>
+</html>
